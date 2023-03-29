@@ -1,0 +1,7 @@
+.perfil-container{
+  display: flex;
+  flex-direction: column;
+}
+.perfil-container > *{
+  width: 100%;
+}

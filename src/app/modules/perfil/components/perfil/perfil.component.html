@@ -1,0 +1,58 @@
+<mat-card class="alto">
+  <h2 class="alinear">Listado de Perfiles</h2>
+  <mat-card-header>
+    <div>
+      <mat-form-field hintLabel="Buscar perfil" appearance="fill">
+        <mat-label>Buscar perfil</mat-label>
+        <input matInput #input>
+      </mat-form-field>
+    </div>
+  </mat-card-header>
+  <mat-card-header>
+    <div fxFlex fxLayoutAlign="flex-end">
+      <ul fxLayout="row" fxLayoutGap="20px">
+          <li>
+            <button mat-raised-button color="primary" (click)="openPerfilDialog()" >Agregar perfil</button>
+          </li>
+      </ul>
+    </div>
+  </mat-card-header>
+  <div mat-card-image></div>
+  <mat-card-content>
+      <table mat-table [dataSource]="dataSource" class="mat-cell">
+        <!-- id Column -->
+        <ng-container matColumnDef="id" >
+          <th mat-header-cell *matHeaderCellDef>Id</th>
+          <th mat-header-cell *matCellDef="let element">{{element.id}}</th>
+        </ng-container>
+           <!-- name Column -->
+           <ng-container matColumnDef="name" >
+            <th mat-header-cell *matHeaderCellDef>Nombre</th>
+            <th mat-header-cell *matCellDef="let element">{{element.name}}</th>
+          </ng-container>
+          <!-- Description Column -->
+          <ng-container matColumnDef="description">
+           <th mat-header-cell *matHeaderCellDef>Edad</th>
+           <th mat-header-cell *matCellDef="let element">{{element.tipo_perfil}}</th>
+         </ng-container>
+         <!-- actions -->
+         <ng-container matColumnDef="actions">
+          <th mat-header-cell *matHeaderCellDef>Acciones</th>
+          <td mat-header-cell *matCellDef="let element; let i=index;">
+            <button mat-icon-button color="accent" (click)="edit(element.id, element.name, element.tipo_perfil)">
+                <mat-icon aria-label="Edit">edit</mat-icon>
+     
+
+            </button>
+            <button mat-icon-button color="accent" (click)="delete(element.id)">
+              <mat-icon aria-label="Delete">delete</mat-icon>
+     
+
+            </button>
+          </td>
+         </ng-container>
+         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+         <tr mat-row *matRowDef="let row; columns:displayedColumns;"></tr>
+      </table>
+  </mat-card-content>
+</mat-card>
