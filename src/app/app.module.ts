@@ -1,26 +1,51 @@
-import { NgModule } from '@angular/core';
+import { APP_INITIALIZER, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DashboardModule } from './modules/dashboard/dashboard.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { CommonModule } from '@angular/common';
 import { MoviesModule } from './modules/movies/movies.module';
+import { KeycloakAngularModule, KeycloakService } from 'keycloak-angular';
 
 
+function initializeKeycloak(keycloak: KeycloakService) {
+  return () =>
+    keycloak.init({
+      config: {
+        url: 'http://localhost:8082/',
+        realm: 'StreamConsulti',
+        clientId: 'angular-client-consulti'
+      },
+      initOptions: {
+        onLoad: 'login-required',
+        flow: "standard",
+        silentCheckSsoRedirectUri:
+          window.location.origin + '/assets/silent-check-sso.html'
+      },
+      loadUserProfileAtStartUp: true
+    });
+}
 
 @NgModule({
   declarations: [
     AppComponent,
   ],
   imports: [
-    CommonModule,
     BrowserModule,
     AppRoutingModule,
     DashboardModule,
     BrowserAnimationsModule,
-    MoviesModule
+    MoviesModule,
+    KeycloakAngularModule
+  ],
+  providers: [
+    {
+      provide: APP_INITIALIZER,
+      useFactory: initializeKeycloak,
+      multi: true,
+      deps: [KeycloakService]
+    }
   ],
   bootstrap: [AppComponent]
 })
