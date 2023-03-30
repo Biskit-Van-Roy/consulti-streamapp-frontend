@@ -1,0 +1,29 @@
+
+  <mat-card>
+    <h2>{{ title }}</h2>
+   <mat-card-content>
+    <table mat-table [dataSource]="dataSource" class="mat-cell">
+      <!-- COLUMNA DE IDS -->
+      <ng-container matColumnDef="id" >
+        <th mat-header-cell *matHeaderCellDef class="margenId">Id</th>
+        <th mat-header-cell *matCellDef="let element" class="elementoId">{{element.id}}</th>
+      </ng-container>
+      <!-- Columna de nombres -->
+      <ng-container matColumnDef="title" >
+        <th mat-header-cell *matHeaderCellDef class="margenNombre">Nombre</th>
+        <th mat-header-cell *matCellDef="let element" class="elementoNombre">{{element.title}}</th>
+      </ng-container>
+      <!-- Columna de imagenes -->
+      <ng-container matColumnDef="posterURL" >
+        <th mat-header-cell *matHeaderCellDef class="margenPoster">Poster</th>
+        <th mat-header-cell *matCellDef="let element" class="elementoPoster"><img src="{{element.posterURL}}" alt=""></th>
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns:displayedColumns;"></tr>
+    </table>
+    <br/>
+   </mat-card-content>
+  </mat-card>
+ 
+
+

@@ -34,7 +34,6 @@ public perfilForm: FormGroup;
       tipo_perfil:this.perfilForm.get('edad')?.value
     }
     console.log("La data guardada es: ", data)
-    console.log("El usuario que seleccionó tiene el id: ", this.data.id)
     if(this.data != null){
       //actualizar registro
       this.perfilService.updatePerfil(data, this.data.id)
