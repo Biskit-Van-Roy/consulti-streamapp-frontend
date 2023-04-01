@@ -6,30 +6,16 @@ import { AppComponent } from './app.component';
 import { DashboardModule } from './modules/dashboard/dashboard.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MoviesModule } from './modules/movies/movies.module';
-import { KeycloakAngularModule, KeycloakService } from 'keycloak-angular';
+import { SigninComponent } from './components/signin/signin.component';
+import { LoginComponent } from './components/login/login.component';
 
 
-function initializeKeycloak(keycloak: KeycloakService) {
-  return () =>
-    keycloak.init({
-      config: {
-        url: 'http://localhost:8082/',
-        realm: 'StreamConsulti',
-        clientId: 'angular-client-consulti'
-      },
-      initOptions: {
-        onLoad: 'login-required',
-        flow: "standard",
-        silentCheckSsoRedirectUri:
-          window.location.origin + '/assets/silent-check-sso.html'
-      },
-      loadUserProfileAtStartUp: true
-    });
-}
 
 @NgModule({
   declarations: [
     AppComponent,
+    SigninComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -37,16 +23,9 @@ function initializeKeycloak(keycloak: KeycloakService) {
     DashboardModule,
     BrowserAnimationsModule,
     MoviesModule,
-    KeycloakAngularModule
+
   ],
-  providers: [
-    {
-      provide: APP_INITIALIZER,
-      useFactory: initializeKeycloak,
-      multi: true,
-      deps: [KeycloakService]
-    }
-  ],
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }

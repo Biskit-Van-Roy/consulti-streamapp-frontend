@@ -11,7 +11,9 @@ export class PerfilService {
   constructor(private http: HttpClient) { }
   /**
    * Get all profiles
-   * @returns 
+   * @autor:
+   * @param
+   * @return  
    */
   getPerfiles(){
     const endpoint  = `${base_url}/perfil`;

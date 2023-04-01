@@ -12,7 +12,7 @@ export class SidenavComponent implements OnInit {
     {name: "Home", route: "home", icon: "home"},
     {name: "Perfiles", route: "profiles", icon: "person_outline"}
   ]
-  constructor(media:MediaMatcher ) {
+  constructor(media:MediaMatcher) {
     this.mobileQuery = media.matchMedia('(mx-width: 600px)');
    }
 
