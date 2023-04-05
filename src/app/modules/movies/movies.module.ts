@@ -6,24 +6,25 @@ import { MaterialModule } from '../shared/material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatCardModule } from '@angular/material/card';
+import { SharedModule } from "../shared/shared.module";
 
 
 
 
 @NgModule({
-  declarations: [
-    MoviesComponent
-  ],
-  imports: [
-    CommonModule,
-    MaterialModule,
-    FlexLayoutModule,
-    MatCardModule,
-    FormsModule,
-    ReactiveFormsModule,
-    HttpClientModule
-  
-
-  ]
+    declarations: [
+        MoviesComponent
+    ],
+    imports: [
+        CommonModule,
+        MaterialModule,
+        FlexLayoutModule,
+        MatCardModule,
+        FormsModule,
+        ReactiveFormsModule,
+        HttpClientModule,
+        SharedModule,
+      
+    ]
 })
 export class MoviesModule { }

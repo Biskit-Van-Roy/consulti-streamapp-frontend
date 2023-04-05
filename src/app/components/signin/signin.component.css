@@ -1,0 +1,80 @@
+.ancho{
+  position: absolute;
+  width: 100px;
+}
+.card-class{
+  background: rgba(255, 255, 255, 0.391);
+
+  padding: 10px;
+}
+.contenedor-planes{
+  padding: 10px;
+  margin: 10px 0 10px 0;
+  background-color: rgba(168, 168, 168, 0.287);
+  border-radius: 20px;
+  
+}
+.contenedor-planes>h1{
+  font-size: 15px;
+  color: white;
+  font-weight: bold;
+}
+a{
+  text-decoration: none;
+}
+.contenedor-total{
+  width: 100%;
+  padding: 80px;
+  height: 100vh;
+  background-color: #681d83;
+}
+.columna{
+  padding: 10px 20px 50px 50px;
+}
+.texto-footer{
+  display: flex;
+  width: 500px;
+  height: 30px;
+}
+.link{
+  
+  margin-left: 10px;
+}
+.link>h1{
+  font-weight: bold;
+}
+.header{
+  color: white;
+
+  font-size: 40px;
+  font-weight: 400;
+}
+.edad{
+  width: 80px;
+}
+label{
+  font-weight: 500;
+  color: white;
+  font-size: 20px;
+}
+.radio{
+  height: 17px;
+  width: 17px;
+}
+.titulo2{
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+}
+.texto-footer>h1{
+  color:white;
+  font-size: 17px;
+  
+}
+.texto-iniciar{
+  color: rgb(246, 216, 169);
+  font-size: 18px;
+}
+.color-boton{
+  background-color: #681d83;
+  font-weight: bold;
+}

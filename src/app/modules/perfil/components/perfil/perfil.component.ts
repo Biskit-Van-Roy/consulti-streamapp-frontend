@@ -18,7 +18,7 @@ export class PerfilComponent implements OnInit {
   ngOnInit(): void {
     this.getPerfiles();
   }
-  displayedColumns: String[]=['id','name','description','actions'];
+  displayedColumns: String[]=['name','actions'];
   dataSource = new MatTableDataSource<PerfilElement>();
 
   getPerfiles(){

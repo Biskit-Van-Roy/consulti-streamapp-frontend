@@ -13,8 +13,6 @@ import { PerfilComponent } from '../perfil/components/perfil/perfil.component';
   declarations: [
     DashboardComponent,
     HomeComponent,
-    
- 
   ],
   imports: [
     CommonModule,

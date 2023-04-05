@@ -4,7 +4,7 @@
 }
 
 table{
-  width: 100%;
+  width: 50%;
 }
 ul li{
   list-style: none;
@@ -62,21 +62,4 @@ color: rgb(238, 231, 241);
   width: 100%;
 text-align: center;
 align-items: center;
-}
-.titulo{
-  margin-top: 66px;
-}
-.columna-1{
-  margin-right: 50px;
-  margin-top: 20px;
-  width: 40%;
-}
-.contenedorT{
-  display: flex;
-  
-  justify-content: space-around;
-  width: 100%;
-}
-.columna-2{
-  width: 40%;
 }

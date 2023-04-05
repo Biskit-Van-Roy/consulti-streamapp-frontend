@@ -1,1 +1,92 @@
-<p>signin works!</p>
+<div class="contenedor-total">
+  <div class="container mt-4 ancho">
+
+  </div>
+  
+<div class="card card-class">
+  
+  <form>
+    <div class="row">
+      <div class="col columna">
+        <h1 class="header">Crear una nueva cuenta</h1>
+        <br>
+        <div class="form-group">
+          <label for="nombre">Nombre</label>
+          <br>
+          
+          <input type="text"  [(ngModel)]="name" [ngModelOptions]="{standalone:true}"    class="form-control" id="nombre" placeholder="Nombre">
+        </div>
+        <br>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <br>
+          <input type="email"  [(ngModel)]="email" [ngModelOptions]="{standalone:true}"  class="form-control" id="email" placeholder="Email">
+        </div>
+        <br>
+        <div class="form-group">
+          <label for="email">Contraseña</label>
+          <br>
+          <input type="password"  [(ngModel)]="password" [ngModelOptions]="{standalone:true}"  class="form-control" id="password" placeholder="Contraseña">
+        </div>
+        <br>
+        <div class="form-group edad">
+          <label for="edad">Edad</label>
+          <br>
+          <input type="number"  [(ngModel)]="edad" [ngModelOptions]="{standalone:true}"  class="form-control" id="edad" placeholder="Edad">
+        </div>
+      </div>
+     
+      <div class="col columna">
+        <h1 class="titulo2">Escoja el tipo de usuario</h1>
+        <div  *ngFor="let checkboxU of checkboxesUser">
+          <label>
+            <input type="checkbox" [id]="checkboxU.id" [disabled]="checkboxU.disabled" (change)="onChangeU($event)"  >
+            {{checkboxU.value}}
+          </label>
+        </div>
+   
+    
+ 
+  
+    <br>
+    <h1 class="titulo2">Escoja el plan</h1>
+
+    <div  *ngFor="let checkbox of checkboxes">
+      <label>
+        <input type="checkbox" [id]="checkbox.id" [disabled]="checkbox.disabled" (change)="onChange($event)">
+        {{checkbox.value}}
+      </label>
+    </div>
+   <!--  <div class="form-check">
+      <input class="form-check-input" type="checkbox" [id]="checkboxes" [(ngModel)]="tipo1" (change)="onChange($event)" [disabled]="checkboxEstado1">
+      <label class="form-check-label" for="tipoAdministrador">Administrador</label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" role="switch"id="tipoUsuario"  (change)="onChange($event)" [(ngModel)]="tipo2" >
+      <label class="form-check-label" for="tipoUsuario">Usuario</label>
+    </div> -->
+    <br>
+    <br>
+    <button type="submit" class="btn btn-primary color-boton" (click)="save()">Registrar</button>
+    <br>
+    <br>
+    <div class="texto-footer">
+      <h1>Si ya tienes una cuenta </h1>
+      <a mat-list-item class="link"  [routerLink]="['/']" routerLinkActive="router-link-active" >
+        <h1 class="texto-iniciar">Inicia sesión</h1>
+      </a>
+    </div>
+      </div>
+    </div>
+
+  <!--   <div class="form-group">
+      <label for="idTipo">Tipo de perfil</label>
+      <input type="number"  [(ngModel)]="tipo_perfil" [ngModelOptions]="{standalone:true}"  class="form-control" id="idTipo" placeholder="Tipo de perfil">
+    </div> -->
+    
+    <br>
+    <br>
+   
+  </form>
+  </div>
+</div>
